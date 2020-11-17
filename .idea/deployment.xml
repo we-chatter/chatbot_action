@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always">
+    <serverData>
+      <paths name="idc@192.168.8.183:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data/xiaobensuan/Codes/Chatbot_Action" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="xsq@172.18.86.21:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/Data/xiaobensuan/Codes/Chatbot_Action" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
