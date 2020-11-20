@@ -16,7 +16,7 @@
 import requests
 import logging
 import json
-from config.service_config import ServiceConfig
+from aips.service_config import ServiceConfig
 
 
 logger = logging.getLogger(__name__)

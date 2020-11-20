@@ -17,7 +17,7 @@ import requests
 import json
 import logging
 
-from config.service_config import ServiceConfig
+from aips.service_config import ServiceConfig
 
 sc = ServiceConfig()
 
