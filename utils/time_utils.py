@@ -36,10 +36,11 @@ def get_time_unit(msg):
     data = datetime.datetime.strptime(date_unit, '%Y-%m-%d').date()
     return data
 
+
 def forecast_to_text(address, condition):
     msg_tpl = "{city} {date} 的天气情况为：{condition}；气温：{temp_low}-{temp_high} 度"
     msg = msg_tpl.format(
-        city= address,
+        city=address,
         date=condition.date,
         condition=condition.condition,
         temp_low=condition.low_temperature,

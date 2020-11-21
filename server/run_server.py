@@ -20,7 +20,7 @@ sys.path.insert(0, parentdir)
 
 import logging
 import types
-import argparse
+import json
 from typing import List, Text, Union
 
 from sanic import Sanic, response
@@ -29,9 +29,10 @@ from sanic.request import Request
 from sanic_cors import CORS
 
 from model import utils
-from server import params
 from model.Model_config import DEFAULT_SERVER_PORT
 from model.Executor import ActionExecutor
+
+from utils.LogUtils import Logger
 
 logger = logging.getLogger(__name__)
 
@@ -52,15 +53,15 @@ def configure_cors(
     )
 
 
-def create_argument_parser():
-    """
-    参数解析
-    :return:
-    """
-    parser = argparse.ArgumentParser(description="starts the action server")
-    params.add_endpoint_arguments(parser)
-    utils.add_logging_option_arguments(parser)
-    return parser
+# def create_argument_parser():
+#     """
+#     参数解析
+#     :return:
+#     """
+#     parser = argparse.ArgumentParser(description="starts the action server")
+#     params.add_endpoint_arguments(parser)
+#     utils.add_logging_option_arguments(parser)
+#     return parser
 
 
 def create_app(
@@ -109,7 +110,8 @@ def create_app(
             return response.json(body, status=400)
 
         result = await executor.run(action_call)
-
+        log_res = json.dumps(result, ensure_ascii=False)
+        logger.info(log_res)
         return response.json(result, status=200)
 
     return app
